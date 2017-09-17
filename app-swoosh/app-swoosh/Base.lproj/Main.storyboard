@@ -16,10 +16,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--WelcomeVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="app_swoosh" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WelcomeVC" customModule="app_swoosh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -86,19 +86,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <connections>
-                        <outlet property="bgImg" destination="9aw-au-9BN" id="28r-gr-o3R"/>
-                        <outlet property="swoosh" destination="r9M-qg-3Dc" id="32L-2s-75G"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-18.399999999999999" y="105.69715142428787"/>
         </scene>
-        <!--View Controller-->
+        <!--LeagueVC-->
         <scene sceneID="kaQ-Gn-wmb">
             <objects>
-                <viewController id="IuJ-j6-3AO" sceneMemberID="viewController">
+                <viewController id="IuJ-j6-3AO" customClass="LeagueVC" customModule="app_swoosh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4i8-IS-NQG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -177,6 +173,9 @@
                                 <state key="normal" title="NEXT">
                                     <color key="titleColor" red="0.98958333330000003" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="onNextTapped:" destination="IuJ-j6-3AO" eventType="touchUpInside" id="mgI-gn-ctO"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="erU-pm-47g">
                                 <rect key="frame" x="0.0" y="10" width="59" height="48"/>
@@ -210,16 +209,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zAN-D0-QQk"/>
                     </view>
+                    <connections>
+                        <segue destination="0Ph-fZ-tPz" kind="show" identifier="skillVCSegue" id="Nyu-M2-FjP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uwh-zH-Z42" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="W5H-Rl-ehw" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="831.20000000000005" y="104.7976011994003"/>
         </scene>
-        <!--View Controller-->
+        <!--SkillVC-->
         <scene sceneID="PUI-lv-P03">
             <objects>
-                <viewController id="0Ph-fZ-tPz" sceneMemberID="viewController">
+                <viewController id="0Ph-fZ-tPz" customClass="SkillVC" customModule="app_swoosh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Du0-tY-lzI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -280,17 +282,29 @@
                                     <color key="titleColor" red="0.98958333330000003" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLm-Ig-Fc3">
+                                <rect key="frame" x="0.0" y="10" width="59" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="7u4-GU-6AT"/>
+                                    <constraint firstAttribute="height" constant="48" id="866-0G-yYq"/>
+                                    <constraint firstAttribute="width" constant="59" id="afc-vf-Dfg"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="59" id="gd1-WU-KYi"/>
+                                </constraints>
+                                <state key="normal" image="backButton"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="aI5-uc-Bx7" firstAttribute="bottom" secondItem="Pde-Jv-VBi" secondAttribute="bottom" constant="20" id="97K-zt-ouP"/>
                             <constraint firstItem="JQP-Cq-gFI" firstAttribute="leading" secondItem="aI5-uc-Bx7" secondAttribute="leading" id="G0L-U8-AQs"/>
+                            <constraint firstItem="dLm-Ig-Fc3" firstAttribute="top" secondItem="Du0-tY-lzI" secondAttribute="top" constant="10" id="K8L-dW-q80"/>
                             <constraint firstItem="JQP-Cq-gFI" firstAttribute="top" secondItem="Du0-tY-lzI" secondAttribute="top" id="LNZ-XB-OVg"/>
                             <constraint firstItem="cPx-Nc-C0m" firstAttribute="top" secondItem="FPy-RR-VC6" secondAttribute="bottom" constant="50" id="MSk-6E-dNO"/>
                             <constraint firstItem="aI5-uc-Bx7" firstAttribute="trailing" secondItem="cPx-Nc-C0m" secondAttribute="trailing" constant="16" id="TR4-4z-AAs"/>
                             <constraint firstItem="cPx-Nc-C0m" firstAttribute="leading" secondItem="aI5-uc-Bx7" secondAttribute="leading" constant="16" id="UKU-r4-oNX"/>
                             <constraint firstItem="FPy-RR-VC6" firstAttribute="top" secondItem="aI5-uc-Bx7" secondAttribute="top" constant="20" id="Xah-wc-LJR"/>
                             <constraint firstItem="FPy-RR-VC6" firstAttribute="leading" secondItem="aI5-uc-Bx7" secondAttribute="leading" id="Z72-LQ-Quq"/>
+                            <constraint firstItem="dLm-Ig-Fc3" firstAttribute="leading" secondItem="aI5-uc-Bx7" secondAttribute="leading" id="Zbu-m8-K6j"/>
                             <constraint firstItem="Pde-Jv-VBi" firstAttribute="leading" secondItem="aI5-uc-Bx7" secondAttribute="leading" constant="16" id="krY-7n-eWX"/>
                             <constraint firstItem="aI5-uc-Bx7" firstAttribute="trailing" secondItem="Pde-Jv-VBi" secondAttribute="trailing" constant="16" id="nO0-uu-5i2"/>
                             <constraint firstItem="JQP-Cq-gFI" firstAttribute="trailing" secondItem="aI5-uc-Bx7" secondAttribute="trailing" id="nWD-U6-Q4T"/>
@@ -302,7 +316,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qrf-M5-ThH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1618" y="106"/>
+            <point key="canvasLocation" x="1687" y="105"/>
         </scene>
     </scenes>
     <resources>
